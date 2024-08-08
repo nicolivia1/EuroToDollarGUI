@@ -2,6 +2,8 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from DollarEuroui import DollarEuroUI
+
+
 # from Aboutui import AboutPageUI
 class MainApp:
     def __init__(self, master):
@@ -11,12 +13,12 @@ class MainApp:
 
         # build ui
         self.main_notebook = ttk.Notebook(master)
-        self.main_notebook.grid(column='0', row='0', sticky='nsew')
-        self.main_notebook.rowconfigure('0', weight='1')
-        self.main_notebook.columnconfigure('0', weight='1')
+        self.main_notebook.grid(column=0, row=0, sticky='nsew')
+        self.main_notebook.rowconfigure(0, weight=1)
+        self.main_notebook.columnconfigure(0, weight=1)
 
         # Main widget
-        self.mainwindow = self.main_notebook
+        self.main_window = self.main_notebook
 
         # Add About... tab
         # about_app = AboutApp(self.__mainwindow)
@@ -27,11 +29,12 @@ class MainApp:
         #self.main_notebook.add(about_tab.get_top_frame(), text="About")
 
         # Adding the first calculator
-        dollar_to_euro_app = DollarEuroUI(self.mainwindow)
+        dollar_to_euro_app = DollarEuroUI(self.main_window)
         self.main_notebook.add(dollar_to_euro_app.get_top_frame(), text="Dollars to Euros")
 
     def run(self):
-        self.mainwindow.mainloop()
+        self.main_window.mainloop()
+
 
 if __name__ == '__main__':
     # I probably added root = tk.TK() and the word root in MainApp(root)

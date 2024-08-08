@@ -22,7 +22,7 @@ class DollarEuroUI:
             "topLabel", master)
         self.builder.connect_callbacks(self)
         self.dollar_input = self.builder.get_object("dollarEntry", master)
-        self.euro_output = self.builder.get_variable("euroEntry")
+        self.euro_output = self.builder.get_variable("euro_entry_variable")
 
     def run(self):
         self.mainwindow.mainloop()
@@ -35,10 +35,10 @@ class DollarEuroUI:
         try:
             dollars = float(self.dollar_input.get())
             euros = dollars * DollarEuroUI.EURO_CONVERSION_RATE
-            self.__ounces_entry_variable.set("{:.2f} ounces".format(ounces))
+            self.euro_output.set(f"{euros:.2f}")
         except ValueError:
-            mb.showerror(title="Error Calculating Ounces!", message="Grams must be a decimal number. Please try again.")
-
+            mb.showerror(title="Error Calculating Euros!",
+                         message="Dollar amount must be a decimal number. Please try again.")
 
 
 if __name__ == "__main__":

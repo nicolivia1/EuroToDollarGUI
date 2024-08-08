@@ -126,6 +126,7 @@
             <property name="cursor">arrow</property>
             <property name="font">TkDefaultFont</property>
             <property name="justify">left</property>
+            <property name="textvariable">string:euro_entry_variable</property>
             <property name="state">readonly</property>
             <layout manager="grid">
               <property name="column">1</property>
