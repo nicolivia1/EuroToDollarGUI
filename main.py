@@ -2,7 +2,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from DollarEuroui import DollarEuroUI
-from Aboutui import AboutPageUI
+# from Aboutui import AboutPageUI
 class MainApp:
     def __init__(self, master):
         # This is needed to allow the notebook tabs to stretch.
@@ -36,5 +36,6 @@ class MainApp:
 if __name__ == '__main__':
     # I probably added root = tk.TK() and the word root in MainApp(root)
     root = tk.Tk()
+    root.title("Currency Conversion Calculator")
     app = MainApp(root)
     app.run()

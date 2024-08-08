@@ -22,13 +22,15 @@
     <customwidgets />
   </project>
   <object class="ttk.Labelframe" id="topLabel" named="True">
-    <property name="cursor">based_arrow_down</property>
+    <property name="cursor">arrow</property>
     <property name="height">200</property>
     <property name="labelanchor">nw</property>
-    <property name="text" translatable="yes">Dollar-Euro</property>
     <property name="width">550</property>
-    <layout manager="pack" />
-    <containerlayout manager="pack">
+    <layout manager="grid">
+      <property name="column">0</property>
+      <property name="row">0</property>
+    </layout>
+    <containerlayout manager="grid">
       <property name="anchor">n</property>
       <property name="propagate">false</property>
     </containerlayout>
@@ -36,15 +38,15 @@
       <object class="ttk.Frame" id="frame1" named="True">
         <property name="height">200</property>
         <property name="width">200</property>
-        <layout manager="pack">
-          <property name="side">top</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">0</property>
         </layout>
         <child>
           <object class="ttk.Label" id="mainLabel" named="True">
             <property name="compound">top</property>
-            <property name="cursor">based_arrow_up</property>
+            <property name="cursor">arrow</property>
             <property name="font">{arial} 12 {bold}</property>
-            <property name="relief">groove</property>
             <property name="state">normal</property>
             <property name="text" translatable="yes">Dollar to Euro Conversion Calculator</property>
             <layout manager="grid">
@@ -60,15 +62,15 @@
       <object class="ttk.Frame" id="frame2" named="True">
         <property name="height">200</property>
         <property name="width">200</property>
-        <layout manager="pack">
-          <property name="side">top</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">1</property>
         </layout>
         <child>
           <object class="ttk.Label" id="dollarLabel" named="True">
             <property name="compound">top</property>
             <property name="font">TkDefaultFont</property>
             <property name="justify">center</property>
-            <property name="relief">flat</property>
             <property name="state">normal</property>
             <property name="text" translatable="yes">Enter US Dollar amount to convert to Euros:       $</property>
             <layout manager="grid">
@@ -93,7 +95,7 @@
         </child>
         <child>
           <object class="ttk.Button" id="calculateButton" named="True">
-            <property name="command" type="command" cbtype="with_wid">calculate</property>
+            <property name="command" type="command" cbtype="simple">calculate</property>
             <property name="compound">left</property>
             <property name="text" translatable="yes">Calculate</property>
             <layout manager="grid">
@@ -108,8 +110,8 @@
           <object class="ttk.Label" id="euroLabel" named="True">
             <property name="font">TkDefaultFont</property>
             <property name="justify">center</property>
-            <property name="relief">flat</property>
-            <property name="text" translatable="yes">Amount in Euros:                                                  €</property>
+            <property name="state">normal</property>
+            <property name="text" translatable="yes">Amount in Euros:                                                   €</property>
             <layout manager="grid">
               <property name="column">0</property>
               <property name="padx">1</property>
