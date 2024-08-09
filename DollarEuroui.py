@@ -1,3 +1,6 @@
+# Made by Nicole Sausville
+
+
 #!/usr/bin/python3
 import pathlib
 import tkinter as tk
@@ -13,23 +16,25 @@ RESOURCE_PATHS = [PROJECT_PATH]
 
 class DollarEuroUI:
     EURO_CONVERSION_RATE = 0.91468602
+
     def __init__(self, master=None):
         self.builder = pygubu.Builder()
         self.builder.add_resource_paths(RESOURCE_PATHS)
         self.builder.add_from_file(PROJECT_UI)
         # Main widget
-        self.mainwindow: ttk.Labelframe = self.builder.get_object(
+        self.main_window = self.builder.get_object(
             "topLabel", master)
         self.builder.connect_callbacks(self)
+
         self.dollar_input = self.builder.get_object("dollarEntry", master)
         self.euro_output = self.builder.get_variable("euro_entry_variable")
 
     def run(self):
-        self.mainwindow.mainloop()
+        self.main_window.mainloop()
 
     def get_top_frame(self):
         # Return the top frame for the app so that it can be displayed in a tabbed notebook.
-        return self.mainwindow
+        return self.main_window
 
     def calculate(self):
         try:
