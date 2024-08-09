@@ -1,7 +1,7 @@
 # Made by Nicole Sausville
 
 
-#!/usr/bin/python3
+# Imports
 import pathlib
 import tkinter as tk
 import pygubu
@@ -17,6 +17,7 @@ RESOURCE_PATHS = [PROJECT_PATH]
 class DollarEuroUI:
     EURO_CONVERSION_RATE = 0.91468602
 
+    # Constructor
     def __init__(self, master=None):
         self.builder = pygubu.Builder()
         self.builder.add_resource_paths(RESOURCE_PATHS)
@@ -29,13 +30,15 @@ class DollarEuroUI:
         self.dollar_input = self.builder.get_object("dollarEntry", master)
         self.euro_output = self.builder.get_variable("euro_entry_variable")
 
+    # Runs window
     def run(self):
         self.main_window.mainloop()
 
+    # Adding tab functionality
     def get_top_frame(self):
-        # Return the top frame for the app so that it can be displayed in a tabbed notebook.
         return self.main_window
 
+    # Dollar to Euro calculation
     def calculate(self):
         try:
             dollars = float(self.dollar_input.get())

@@ -13,11 +13,12 @@ from EuroToDollarsui import EuroToDollarsAppUI
 
 
 class MainApp:
+    # Constructor
     def __init__(self, master):
         tk.Grid.columnconfigure(master, 0, weight=1)
         tk.Grid.rowconfigure(master, 0, weight=1)
 
-        # build ui
+        # Building UI
         self.main_notebook = ttk.Notebook(master)
         self.main_notebook.grid(column=0, row=0, sticky='nsew')
         self.main_notebook.rowconfigure(0, weight=1)
@@ -38,12 +39,12 @@ class MainApp:
         euro_to_dollar_app = EuroToDollarsAppUI()
         self.main_notebook.add(euro_to_dollar_app.get_top_frame(), text="Euros to Dollars")
 
+    # Runs the window
     def run(self):
         self.main_window.mainloop()
 
 
 if __name__ == '__main__':
-    # I probably added root = tk.TK() and the word root in MainApp(root)
     root = tk.Tk()
     root.title("Currency Conversion Calculator")
     app = MainApp(root)
